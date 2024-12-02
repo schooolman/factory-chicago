@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/libre-barcode-39-text": "^5.1.0",
     "astro": "^4.16.16"
   }
 }
