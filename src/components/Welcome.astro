@@ -1,7 +1,7 @@
 ---
 import background from "../assets/background-texture.jpg";
 import "@fontsource/libre-barcode-39-text";
-import logo from "../assets/factory-logo.svg";
+import logo from "../assets/logo_words_white.svg";
 ---
 
 <div id="container">
@@ -9,7 +9,6 @@ import logo from "../assets/factory-logo.svg";
   <main>
     <section id="hero">
       <img id="logo" src={logo.src} alt="Factory Logo" />
-      <h1 class="splash">FACTORY</h1>
     </section>
   </main>
 </div>
@@ -26,9 +25,10 @@ import logo from "../assets/factory-logo.svg";
 
   #logo {
     display: block;
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     animation: pulse 2s infinite;
+    color: white;
   }
 
   @keyframes pulse {
