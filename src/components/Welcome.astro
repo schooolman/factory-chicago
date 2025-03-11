@@ -9,6 +9,16 @@ import logo from "../assets/logo_words_white.svg";
   <main>
     <section id="hero">
       <img id="logo" src={logo.src} alt="Factory Logo" />
+      <div class="links">
+        <a class="homepage-link" href="https://instagram.coom/factorychi"
+          >Istagram
+        </a> | <a
+          class="homepage-link"
+          href="here is public link you can share so they can view only and can't mess with it https://www.canva.com/design/DAGgUdzLNJY/aLtI7YlY7NL21OMT7lhpqg/view?utm_content=DAGgUdzLNJY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf1022dd184"
+        >
+          Media Kit</a
+        >
+      </div>
     </section>
   </main>
 </div>
@@ -48,6 +58,27 @@ import logo from "../assets/logo_words_white.svg";
   .headline {
     color: #ffffff;
   }
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .homepage-link,
+  .links {
+    margin: 20px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+  }
+
+  .homepage-link:hover {
+    color: yellowgreen;
+  }
 
   .splash {
     color: #ffffff;
@@ -70,7 +101,7 @@ import logo from "../assets/logo_words_white.svg";
 
   #hero {
     display: flex;
-    align-items: start;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     padding: 16px;
