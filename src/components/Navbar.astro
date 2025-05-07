@@ -63,6 +63,7 @@ import logo from "../assets/logo-white.svg";
     color: #ffffff;
     position: absolute;
     right: -20px;
+    pointer-events: none; /* Disable hover on li::after */
   }
 
   #nav-links li:last-child::after {
@@ -73,11 +74,26 @@ import logo from "../assets/logo-white.svg";
     color: #ffffff;
     text-decoration: none;
     font-size: 18px;
-    transition: color 0.3s;
+    padding: 5px;
+    display: inline-block;
+    height: 100%;
   }
 
-  #nav-links a:hover {
-    color: #ffcc00;
+  #nav-links li:nth-child(even) a:hover {
+    display: inline-block;
+    transform: rotate(-5deg);
+  }
+  #nav-links li:nth-child(odd) a:hover {
+    display: inline-block;
+    transform: rotate(5deg);
+  }
+
+  #nav-links li:hover a {
+    color: #070707;
+  }
+
+  #nav-links li:hover {
+    background-color: #d8f500;
   }
 
   /* Hamburger Button Styles */
