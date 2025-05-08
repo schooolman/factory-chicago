@@ -31,7 +31,6 @@ import logo from "../assets/logo-white.svg";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px 20px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -42,7 +41,7 @@ import logo from "../assets/logo-white.svg";
   }
 
   #logo {
-    padding-left: 20px;
+    padding: 30px;
   }
 
   #nav-links {
@@ -114,12 +113,30 @@ import logo from "../assets/logo-white.svg";
     display: block;
     width: 100%;
     height: 3px;
+    position: relative;
     background-color: #ffffff;
     transition: all 0.3s ease-in-out;
   }
 
+  #hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+  }
+
+  #hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -15px;
+  }
+
   /* Mobile Styles */
   @media screen and (max-width: 768px) {
+    #logo {
+      padding: 30px;
+    }
     #nav-links {
       display: none;
       flex-direction: column;
@@ -158,6 +175,8 @@ import logo from "../assets/logo-white.svg";
     hamburger.addEventListener("click", () => {
       if (navLinks) {
         navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+        document.body.classList.toggle("no-scroll");
       }
     });
   }
