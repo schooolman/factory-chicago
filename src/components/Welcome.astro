@@ -4,20 +4,21 @@ import "@fontsource/libre-barcode-39-text";
 import dancefloor from "../assets/dancefloor.jpg";
 import logoblackwords from "../assets/logo-black-words.svg";
 import cone from "../assets/cone-black.svg";
+import { Image } from "astro:assets";
 ---
 
 <div id="container">
   <main>
     <section id="hero">
-      <img
+      <Image
         id="dancefloor"
-        src={dancefloor.src}
+        src={dancefloor}
         alt="Dance Floor"
         fetchpriority="high"
       />
-      <img
+      <Image
         id="logo"
-        src={logoblackwords.src}
+        src={logoblackwords}
         alt="Factory Party Production Logo"
       />
       <div class="links">
