@@ -7,6 +7,10 @@ import Navbar from "../components/Navbar.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>Factory Chicago</title>
     <style>
@@ -20,11 +24,19 @@ import Navbar from "../components/Navbar.astro";
       html,
       body {
         background-color: #39273f;
-        font-family: "Compacta Blk BT", Inter, Roboto, Arial, sans-serif;
+        font-family: "Compacta Blk BT", "Encode Sans", Inter, Roboto, Arial,
+          sans-serif;
         -webkit-font-smoothing: antialiased;
         margin: 0;
         width: 100%;
         height: 100%;
+      }
+
+      p {
+        font-family: "Encode Sans", Inter, Roboto, Arial, sans-serif;
+        font-size: 18px;
+        line-height: 1.6;
+        color: #070707;
       }
     </style>
   </head>

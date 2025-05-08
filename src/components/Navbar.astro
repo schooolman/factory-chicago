@@ -1,15 +1,12 @@
 ---
 import logo from "../assets/logo-white.svg";
+
+const currentPath = Astro.url.pathname; // Get the current route
 ---
 
 <nav id="navbar">
   <a href="/">
-    <img
-      id="logo"
-      src={logo.src}
-      alt="Factory Party Production Logo"
-      style="width: 100px; height: auto; margin-right: auto;"
-    />
+    <img id="logo" src={logo.src} alt="Factory Party Production Logo" />
   </a>
   <button id="hamburger" aria-label="Toggle navigation">
     <span></span>
@@ -17,10 +14,18 @@ import logo from "../assets/logo-white.svg";
     <span></span>
   </button>
   <ul id="nav-links">
-    <li><a href="/events">Events</a></li>
-    <li><a href="/under-construction">About</a></li>
-    <li><a href="/under-construction">Media</a></li>
-    <li><a href="/under-construction">Contact</a></li>
+    <li class={currentPath === "/about" ? "active" : ""}>
+      <a href="/about" class="nav-link">About</a>
+    </li>
+    <li class={currentPath === "/events" ? "active" : ""}>
+      <a href="/events" class="nav-link">Events</a>
+    </li>
+    <li class={currentPath === "/under-construction" ? "active" : ""}>
+      <a href="/under-construction" class="nav-link">Media</a>
+    </li>
+    <li class={currentPath === "/under-construction" ? "active" : ""}>
+      <a href="/under-construction" class="nav-link">Contact</a>
+    </li>
   </ul>
 </nav>
 
@@ -42,6 +47,9 @@ import logo from "../assets/logo-white.svg";
 
   #logo {
     padding: 30px;
+    width: 100px;
+    height: auto;
+    margin-right: auto;
   }
 
   #nav-links {
@@ -86,12 +94,27 @@ import logo from "../assets/logo-white.svg";
     display: inline-block;
     transform: rotate(5deg);
   }
+  #nav-links li:nth-child(even) a.active {
+    display: inline-block;
+    transform: rotate(-5deg);
+  }
+  #nav-links li:nth-child(odd) a.active {
+    display: inline-block;
+    transform: rotate(5deg);
+  }
 
   #nav-links li:hover a {
     color: #070707;
   }
 
   #nav-links li:hover {
+    background-color: #d8f500;
+  }
+  #nav-links a.active {
+    color: #070707;
+  }
+
+  #nav-links li.active {
     background-color: #d8f500;
   }
 
@@ -135,7 +158,8 @@ import logo from "../assets/logo-white.svg";
   /* Mobile Styles */
   @media screen and (max-width: 768px) {
     #logo {
-      padding: 30px;
+      padding: 30px 30px 10 30px;
+      width: 60px;
     }
     #nav-links {
       display: none;
@@ -155,6 +179,7 @@ import logo from "../assets/logo-white.svg";
 
     #hamburger {
       display: flex;
+      margin-top: 10px;
     }
 
     #nav-links li {
@@ -170,6 +195,19 @@ import logo from "../assets/logo-white.svg";
 <script>
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
+  const currentPath = window.location.pathname;
+
+  // Highlight the active link
+  const links = document.querySelectorAll(".nav-link");
+  links.forEach((link) => {
+    console.log(currentPath);
+    if (link.getAttribute("href") === currentPath) {
+      link.classList.add("active");
+      if (link.parentElement) {
+        link.parentElement.classList.add("active");
+      }
+    }
+  });
 
   if (hamburger) {
     hamburger.addEventListener("click", () => {

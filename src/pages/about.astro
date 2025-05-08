@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import HeroImageLeft from "../assets/doubledrag.jpg";
+import HeroImageRight from "../assets/colin-abstract.jpg";
+import smokestack from "../assets/smokestack-crop.jpg";
+import logo from "../assets/logo-black.svg";
+
+const heroDescription =
+  "Factory Chicago is a collective dedicated to producing high-energy, dance events that combine immersive visuals, diverse music programming, and an inclusive atmosphere. Each event features themed experiences, safe and inclusive space, and a music  driven focus.";
+
+const alternateHeroDescription =
+  "FACTORY CHICAGO is dedicated to delivering cutting -edge sounds through a mix of House, Electronic, Disoc and Funk. We invite local and touring DJs to join us in getting everyone on the dance floor. Our events are designed to be inclusive and welcoming to all, with a focus on creating a safe space for everyone to enjoy the music and connect with each other. We believe in the power of music to bring people together and create unforgettable experiences.";
+---
+
+<Layout>
+  <div id="about-page">
+    <Hero
+      title="What we do"
+      subtitle={heroDescription}
+      imageLeft={HeroImageLeft.src}
+      imageRight={HeroImageRight.src}
+    />
+    <Hero
+      title="MUSIC"
+      subtitle={alternateHeroDescription}
+      imageLeft={smokestack.src}
+      imageRight={logo.src}
+      styleOption="alternative"
+    />
+  </div>
+</Layout>
+
+<style>
+  #about-page {
+    font-family: "Compacta Blk BT", Inter, Roboto, Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    background-color: #39273f;
+    padding: 194px 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 10px 0;
+    max-width: 800px;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  #about-image {
+    max-width: 400px;
+    margin: 20px 0;
+    border-radius: 8px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #about-page {
+      padding-top: 125px;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    #about-image {
+      max-width: 300px;
+    }
+  }
+</style>
