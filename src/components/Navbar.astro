@@ -201,7 +201,7 @@ const currentPath = Astro.url.pathname; // Get the current route
   // Highlight the active link
   const links = document.querySelectorAll(".nav-link");
   links.forEach((link) => {
-    console.log(currentPath);
+    console.log(currentPath, link, link.getAttribute("href"), "checking links");
     if (link.getAttribute("href") === currentPath) {
       link.classList.add("active");
       console.log(link, "link");
