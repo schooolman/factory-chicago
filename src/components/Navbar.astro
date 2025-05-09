@@ -57,7 +57,6 @@ const currentPath = Astro.url.pathname; // Get the current route
     width: 100%;
     z-index: 1000;
     top: 0;
-    position: fixed;
   }
 
   #logo {
@@ -295,6 +294,13 @@ const currentPath = Astro.url.pathname; // Get the current route
       padding: 30px 30px 10px 30px;
       width: 60px;
     }
+
+    .navbar-main {
+      padding-top: 50px;
+      top: -50px;
+      background: linear-gradient(to top, #39273f 3%, #070707);
+      position: fixed;
+    }
     #nav-links {
       display: flex;
       flex-direction: column;
@@ -312,7 +318,7 @@ const currentPath = Astro.url.pathname; // Get the current route
     }
 
     #nav-links.active {
-      transform: translateY(0);
+      transform: translateY(95px);
     }
 
     #hamburger {
