@@ -1,7 +1,7 @@
 ---
 import background from "../assets/background-texture.jpg";
 import "@fontsource/libre-barcode-39-text";
-import dancefloor from "../assets/dancefloor.jpg";
+import dancefloor from "../assets/dancefloor-shrink.jpg";
 import logoblackwords from "../assets/logo-black.svg";
 import cone from "../assets/cone-black.svg";
 import { Image } from "astro:assets";
@@ -37,6 +37,7 @@ import { Image } from "astro:assets";
         src={dancefloor}
         alt="Dance Floor"
         fetchpriority="high"
+        loading="eager"
       />
       <Image
         id="logo"
