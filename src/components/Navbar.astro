@@ -201,13 +201,13 @@ const currentPath = Astro.url.pathname; // Get the current route
   // Highlight the active link
   const links = document.querySelectorAll(".nav-link");
   links.forEach((link) => {
-    console.log(currentPath, link, link.getAttribute("href"), "checking links");
-    if (link.getAttribute("href") === currentPath) {
+    if (
+      link.getAttribute("href") === `${currentPath}/` ||
+      link.getAttribute("href") === currentPath
+    ) {
       link.classList.add("active");
-      console.log(link, "link");
       if (link.parentElement) {
         link.parentElement.classList.add("active");
-        console.log(link.parentElement, "link parent");
       }
     }
   });
@@ -215,6 +215,7 @@ const currentPath = Astro.url.pathname; // Get the current route
   if (hamburger) {
     hamburger.addEventListener("click", () => {
       if (navLinks) {
+        console.log("hamburger clicked");
         navLinks.classList.toggle("active");
         hamburger.classList.toggle("active");
         document.body.classList.toggle("no-scroll");
