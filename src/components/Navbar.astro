@@ -204,8 +204,10 @@ const currentPath = Astro.url.pathname; // Get the current route
     console.log(currentPath);
     if (link.getAttribute("href") === currentPath) {
       link.classList.add("active");
+      console.log(link, "link");
       if (link.parentElement) {
         link.parentElement.classList.add("active");
+        console.log(link.parentElement, "link parent");
       }
     }
   });
