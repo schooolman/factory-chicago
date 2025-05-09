@@ -5,14 +5,16 @@ const currentPath = Astro.url.pathname; // Get the current route
 ---
 
 <nav id="navbar">
-  <a href="/">
-    <img id="logo" src={logo.src} alt="Factory Party Production Logo" />
-  </a>
-  <button id="hamburger" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <div class="navbar-main">
+    <a href="/">
+      <img id="logo" src={logo.src} alt="Factory Party Production Logo" />
+    </a>
+    <button id="hamburger" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
   <ul id="nav-links">
     <li class={currentPath === "/about" ? "active" : ""}>
       <a href="/about" class="nav-link">About</a>
@@ -44,6 +46,16 @@ const currentPath = Astro.url.pathname; // Get the current route
     font-family: "Compacta Blk BT", Inter, Roboto, Arial, sans-serif;
     font-size: 24px;
     text-transform: uppercase;
+  }
+
+  .navbar-main {
+    background-color: #39273f;
+    background: linear-gradient(to top, #39273f 20%, #070707);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 1000;
   }
 
   #logo {
@@ -136,7 +148,8 @@ const currentPath = Astro.url.pathname; // Get the current route
   #hamburger span {
     display: block;
     width: 100%;
-    height: 3px;
+    height: 5px;
+    border-radius: 5px;
     position: relative;
     background-color: #ffffff;
     transition: all 0.1s ease-in-out;
@@ -281,7 +294,7 @@ const currentPath = Astro.url.pathname; // Get the current route
       width: 60px;
     }
     #nav-links {
-      display: none;
+      display: flex;
       flex-direction: column;
       align-items: center;
       position: absolute;
@@ -290,10 +303,17 @@ const currentPath = Astro.url.pathname; // Get the current route
       width: 100%;
       background-color: #39273f;
       padding: 20px 0;
+      transition:
+        transform 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
+      transform: translateY(-100%);
     }
 
     #nav-links.active {
-      display: flex;
+      transform: translateY(0);
+    }
+    #nav-links.active {
+      /* display: flex; */
     }
 
     #hamburger {
