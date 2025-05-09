@@ -139,9 +139,127 @@ const currentPath = Astro.url.pathname; // Get the current route
     height: 3px;
     position: relative;
     background-color: #ffffff;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
+  }
+  /* Hamburger Button Animation */
+  @keyframes open-top {
+    0% {
+      transform: rotate(0);
+      top: 0;
+    }
+    50% {
+      transform: rotate(0);
+      top: 40%;
+    }
+    100% {
+      transform: rotate(45deg);
+      top: 10px;
+    }
   }
 
+  @keyframes open-middle {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 1;
+    }
+    51% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes open-bottom {
+    0% {
+      transform: rotate(0);
+      top: 0;
+    }
+    50% {
+      transform: rotate(0);
+      top: -40%;
+    }
+    100% {
+      transform: rotate(-45deg);
+      top: calc(-40% + -3px);
+    }
+  }
+
+  @keyframes close-top {
+    0% {
+      transform: rotate(45deg);
+      top: 10px;
+    }
+    50% {
+      transform: rotate(0);
+      top: 40%;
+    }
+    100% {
+      transform: rotate(0);
+      top: 0;
+    }
+  }
+
+  @keyframes close-middle {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    51% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes close-bottom {
+    0% {
+      transform: rotate(-45deg);
+      top: -40%;
+    }
+    50% {
+      transform: rotate(0);
+      top: -40%;
+    }
+    100% {
+      transform: rotate(0);
+      top: 0;
+    }
+  }
+
+  #hamburger span {
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  #hamburger.active span:nth-child(1) {
+    animation-name: open-top;
+  }
+
+  #hamburger.active span:nth-child(2) {
+    animation-name: open-middle;
+  }
+
+  #hamburger.active span:nth-child(3) {
+    animation-name: open-bottom;
+  }
+
+  #hamburger:not(.active) span:nth-child(1) {
+    animation-name: close-top;
+  }
+
+  #hamburger:not(.active) span:nth-child(2) {
+    animation-name: close-middle;
+  }
+
+  #hamburger:not(.active) span:nth-child(3) {
+    animation-name: close-bottom;
+  }
   #hamburger.active span:nth-child(1) {
     transform: rotate(45deg);
     top: 10px;
