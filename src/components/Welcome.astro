@@ -231,7 +231,7 @@ import { Image } from "astro:assets";
       transform: translateX(0);
     }
     .homepage-link {
-      font-size: 14px;
+      font-size: 18px;
       padding: 8px;
     }
     .cone,
@@ -245,7 +245,7 @@ import { Image } from "astro:assets";
       display: none;
     }
 
-    .conet-group {
+    .cone-group {
       display: flex;
       justify-content: center;
       gap: 10px;
@@ -254,6 +254,24 @@ import { Image } from "astro:assets";
     .cta-button {
       font-size: 18px;
       padding: 10px 20px;
+    }
+  }
+
+  @media screen and (max-height: 844px) {
+    h1 {
+      font-size: 20px;
+      padding: 0 10px;
+    }
+    #logo {
+      width: 30%;
+      margin: 0;
+    }
+    .links {
+      font-size: 16px;
+    }
+    .homepage-link {
+      font-size: 16px;
+      padding: 6px;
     }
   }
 </style>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
 import prideparty from "../assets/events/atmosphere-pride-print_11x17.jpg";
 ---
 
@@ -9,9 +10,11 @@ import prideparty from "../assets/events/atmosphere-pride-print_11x17.jpg";
     <p>Check out our upcoming shifts!</p>
 
     <section class="event-list">
-      <img
+      <Image
         id="prideparty"
-        src={prideparty.src}
+        src={prideparty}
+        fetchpriority="high"
+        loading="eager"
         alt="Factory Pride Party event poster"
       />
     </section>
