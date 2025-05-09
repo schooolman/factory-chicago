@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.3.1",
     "@fontsource/libre-barcode-39-text": "^5.1.0",
     "astro": "^4.16.16"
   }
